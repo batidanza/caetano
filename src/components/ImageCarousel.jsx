@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ImageCarousel.css";
-import raja from "../assets/raja.jpg";
-import element from "../assets/element1.png";
+import raja from "../assets/anillos/anillo5.png";
+import element from "../assets/anillos/anillo4.png";
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

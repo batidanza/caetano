@@ -4,9 +4,9 @@ import { fetchMl } from "../../services/collectionAPI";
 import { useNavigate } from "react-router-dom";
 
 // Importar la imagen de fondo desde tus assets
-import backgroundImage from "../../assets/pop-1.png";
+import backgroundImage from "../../assets/anillos/anillo1.png";
 // Importar el archivo de audio
-import backgroundAudio from "../../assets/background-audio.wav";
+import backgroundAudio from "../../assets/anillos/anillo2.png";
 
 class ImageDisplay {
   constructor(img, p5, x, y) {

@@ -6,7 +6,13 @@ const Navbar = () => {
     <nav className="vertical-nav">
       <div className="nav-top">
         <Link to="/projects" className="nav-link">
-          PROYECTOS INFO EN
+          PROYECTOS 
+        </Link>
+        <Link to="/projects" className="nav-link">
+          INFO
+        </Link>
+        <Link to="/projects" className="nav-link">
+          EN
         </Link>
       </div>
       <div className="nav-bottom">

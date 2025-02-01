@@ -38,19 +38,19 @@ export default () => {
 
     p5.translate(p5.width / 2, p5.height / 2);
 
-    for (let i = 0; i < 85; i++) {
+    for (let i = 0; i < 1085; i++) {
       p5.push();
-      p5.rotate(p5.sin(p5.frameCount + i) * 1200);
+      p5.rotate(p5.sin(p5.frameCount + i) * 12100);
 
       const britishGreen = {
-        r: 0,
-        g: 150,
-        b: 94,
+        r: 192,
+        g: 192,
+        b: 192,
       };
 
       p5.stroke(britishGreen.r, britishGreen.g, britishGreen.b);
 
-      p5.circle(x, y, 250 - i * 3, 250 - i / 3, 250 - i);
+      p5.line(x, y, 250 - i * 3, 250 - i / 3, 250 - i);
 
       p5.pop();
     }

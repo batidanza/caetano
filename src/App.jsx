@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -10,7 +10,6 @@ import Collection from "./components/work/Collection.jsx";
 import RapidImagePrintSketch from "./components/sketch/RapidImagePrintSketch.jsx";
 
 import WorkSketchPixel from "./components/sketch/WorkSketchPixel.jsx";
-import WorkSketchPixel2 from "./components/sketch/WorkSketchPixel2.jsx";
 
 import Login, { AuthProvider } from "./components/management/user/Login.jsx";
 import Management from "./components/management/Management.jsx";
@@ -22,17 +21,31 @@ import CreateCollection from "./components/management/Collection/CreateCollectio
 import UploadCollectionPhotos from "./components/management/Collection/UploadCollectionPhotos.jsx";
 import ManageCollections from "./components/management/Collection/ManageCollections.jsx";
 import Home from "./components/layout/Home.jsx";
+import LoadingSketch from "./components/layout/LoadingSketch.jsx";
+import ImageSketch from "./components/sketch/ImageSketch.jsx";
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(false); 
+
+  const showLoading = () => {
+    setIsLoading(true);
+  };
+
+  const hideLoading = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="App">
       <Navbar />
       <AuthProvider>
+      {isLoading && <LoadingSketch />}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/manage-collections" element={<ManageCollections />} />
+          <Route path="/manage-collections" element={<ManageCollections showLoading={showLoading} hideLoading={hideLoading} />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/animated-collection" element={<Work />} />
+          <Route path="/projects" element={<ImageSketch />} />
           <Route path="/experimentation" element={<WorkSketchPixel />} />
           <Route
             path="/rapid-image-print"

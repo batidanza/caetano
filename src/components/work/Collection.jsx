@@ -5,55 +5,21 @@ import {
   fetchCollectionById,
 } from "../../services/collectionAPI";
 import { initLightboxJS } from "lightbox.js-react";
-import { SlideshowLightbox } from "lightbox.js-react";
 import "lightbox.js-react/dist/index.css";
 import "./Collection.css";
 import LoadingSketch from "../layout/LoadingSketch";
-import { DndProvider, useDrag, useDrop } from "react-dnd";
+import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { swapPhotoIds } from "../../services/photoAPI";
-import { useAuth } from "../management/user/Login"
-
-const ItemType = "PHOTO";
-
-const DraggablePhoto = ({ photo, index, movePhoto, canDrag }) => {
-  const [, ref] = useDrag({
-    type: ItemType,
-    item: { index },
-    canDrag: () => canDrag,
-  });
-
-  const [, drop] = useDrop({
-    accept: ItemType,
-    hover: (draggedItem) => {
-      if (canDrag && draggedItem.index !== index) {
-        movePhoto(draggedItem.index, index);
-        draggedItem.index = index;
-      }
-    },
-  });
-
-  return (
-    <div ref={(node) => ref(drop(node))} className="artwork-container">
-      <div className="artwork">
-        <SlideshowLightbox className="custom-slideshow-lightbox">
-          <img
-            src={photo.Image}
-            alt={`Photo ${photo.ID}`}
-            className="artwork-image"
-          />
-        </SlideshowLightbox>
-      </div>
-    </div>
-  );
-};
+import { useAuth } from "../management/user/Login";
+import DraggablePhoto from "../management/Collection/DraggablePhoto";
 
 const Collection = () => {
   const { id } = useParams();
   const [photos, setPhotos] = useState([]);
   const [collection, setCollection] = useState(null);
   const [error, setError] = useState(null);
-  const { loggedIn } = useAuth(); // Access authentication state
+  const { loggedIn } = useAuth();
 
   useEffect(() => {
     initLightboxJS("Insert your License Key here", "Insert plan type here");
@@ -66,7 +32,7 @@ const Collection = () => {
           getPhotoByCollection(id),
           fetchCollectionById(id),
         ]);
-        
+
         const sortedPhotos = photoData.sort((a, b) => a.Position - b.Position);
         setPhotos(sortedPhotos);
         setCollection(collectionData);
@@ -113,7 +79,6 @@ const Collection = () => {
   return (
     <div className="collection-container">
       <br />
-      <h1 className="title">{collection.Name || "Collection"}</h1>
       <br />
       <div className="artworks">
         <div className="columns-container">
@@ -127,7 +92,7 @@ const Collection = () => {
                     photo={photo}
                     index={photos.indexOf(photo)}
                     movePhoto={movePhoto}
-                    canDrag={loggedIn} // Pass down the logged-in status
+                    canDrag={loggedIn}
                   />
                 ))}
             </div>

@@ -28,7 +28,6 @@
 }
 
 .title {
-  font-family: IBM-Plex-Sans_Regular, sans-serif;
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: 200;
@@ -36,7 +35,6 @@
 }
 
 .description {
-  font-family: "Array", sans-serif;
   color: #333333;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,7 +44,6 @@
 }
 
 .work-title {
-  font-family: "Array", sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: #38464d;

@@ -18,9 +18,26 @@
   flex-direction: row;
 }
 
-._3BNPD{
+._30i9K {
   background-color: whitesmoke;
-}               
+}
+
+.draggable {
+  cursor: grab;
+  border: 2px dashed #757575;
+  padding: 2px;
+}
+
+.slideshow-lightbox, .slideshow-lightbox-overlay {
+  background-color: #222 !important; /* Color de fondo oscuro */
+}
+.artwork {
+  background-color: whitesmoke;
+}
+
+._3BNPD {
+  background-color: whitesmoke;
+}
 
 .column {
   margin-bottom: 20px;
@@ -28,11 +45,10 @@
 }
 
 .title {
-  font-family: IBM-Plex-Sans_Regular, sans-serif;
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: 200;
-  color: black; /* Color del borde del texto */ ;
+  color: black; /* Color del borde del texto */
 }
 
 .description {

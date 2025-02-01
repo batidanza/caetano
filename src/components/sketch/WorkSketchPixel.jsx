@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Sketch from "react-p5";
 import { getPhotoByArchive } from "../../services/ArchiveAPI";
-import backgroundImage from "../../assets/pop-1.png";
-import backgroundAudio from "../../assets/background-audio.wav";
+import backgroundImage from "../../assets/anillos/anillo1.png";
+import backgroundAudio from "../../assets/anillos/anillo2.png";
 
 class MovableImage {
   constructor(img, originalImg, p5, x, y) {

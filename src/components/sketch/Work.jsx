@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Sketch from "react-p5";
 import { fetchCollection } from "../../services/collectionAPI";
 import { useNavigate } from "react-router-dom";
-import img6 from "../../assets/raja.jpg"; // Import your background image
-import customCursor from "../../assets/cursor2.png"; // Import your custom cursor image
+import img6 from "../../assets/anillos/anillo1.png"; 
 
 class MovableImage {
   constructor(img, p5, x, y, id, onClick) {
@@ -14,9 +13,9 @@ class MovableImage {
     this.id = id;
     this.angle = 0;
     this.radius = 50;
-    this.vx = p5.random(-2, 2); // X-axis velocity
-    this.vy = p5.random(-2, 2); // Y-axis velocity
-    this.onClick = onClick; // Click callback
+    this.vx = p5.random(-2, 2); 
+    this.vy = p5.random(-2, 2);
+    this.onClick = onClick; 
   }
 
   display() {
@@ -76,8 +75,6 @@ const MovableImageCanvas = () => {
     try {
       const collection = await fetchCollection();
 
-      console.log(collection)
-
       p5.loadImage(img6, (img) => {
         setBackgroundImage(img);
       });
@@ -115,9 +112,9 @@ const MovableImageCanvas = () => {
           new Promise((resolve) => {
             p5.loadImage(imageUrl, (img) => {
               if (isMobile) {
-                img.resize(130, 0); // Resize to 130px wide on mobile
+                img.resize(130, 0); 
               } else {
-                img.resize(260, 0); // Resize to 260px wide on desktop
+                img.resize(260, 0); 
               }
               resolve(img);
             });
@@ -167,13 +164,6 @@ const MovableImageCanvas = () => {
         }
       }
     }
-
-    const canvasElement = p5.canvas;
-    if (isAnyImageHovered) {
-      canvasElement.style.cursor = `url(${customCursor}), auto`;
-    } else {
-      canvasElement.style.cursor = ""; // Use default cursor from global CSS
-    }
   };
 
   return (
@@ -192,7 +182,6 @@ const BritishGreenAnimation = () => {
   const setup = (p5, canvasParentRef) => {
     const canvas = p5.createCanvas(window.innerWidth, window.innerHeight).parent(canvasParentRef);
   
-    // Set canvas style properties
     canvas.style('position', 'fixed');
     canvas.style('top', '0');
     canvas.style('left', '0');
@@ -212,7 +201,6 @@ const BritishGreenAnimation = () => {
       p5.push();
       p5.rotate(p5.sin(p5.frameCount + i) * 1200);
 
-      // Use British Green color
       const britishGreen = {
         r: 0,
         g: 0,
