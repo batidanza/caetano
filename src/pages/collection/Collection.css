@@ -1,0 +1,38 @@
+.collection-video-container {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 10vw;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 35vw;
+}
+
+.video {
+  height: 85vh; 
+}
+
+.video::-webkit-media-controls {
+  display: none;
+}
+
+.video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.video-title {
+  font-size: 12px;
+  font-family: "Charis SIL", serif;
+}

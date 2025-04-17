@@ -1,50 +1,75 @@
-body {
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #cccccc;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  box-sizing: border-box;
 }
 
-.App {
-  background-color: whitesmoke;
-}
-
-.link-rrd {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-
-.loading {
-  position: fixed; /* Se asegura de que el loading se mantenga fijo en la pantalla */
-  display: flex; /* Usa flexbox para centrar vertical y horizontalmente */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Fondo semi-transparente para el loading */
-  z-index: 19999; /* Asegura que esté por encima de otros elementos */
-}
-
-.logo-image {
-  width: 200px; /* Ajusta el tamaño según sea necesario */
-  height: auto;
-}
-
-.title {
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-.home-container {
-  width: 100vw;
-  height: 100vh;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Charis SIL", serif;
+  display: block;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-basic-view-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--text-color) !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-clip: border-box !important;
+  box-shadow: none !important;
 }

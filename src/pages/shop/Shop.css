@@ -1,0 +1,78 @@
+.shop-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 120px; 
+    overflow: hidden;
+  }
+  
+  .shop-color-buttons {
+    position: fixed;
+    top: 60px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 48px;
+    z-index: 1000;
+    padding: 8px;
+  }
+  
+  .color-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    gap: 12px;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out; /* Transición suave */
+  }
+  
+  .color-button:hover {
+    transform: scale(1.1); /* Aumenta un 10% al pasar el mouse */
+  }
+  
+  .color-button.active {
+    transform: scale(1.2); /* Aumenta un 20% cuando está seleccionado */
+  }
+  
+  .color-layer {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* MEDIA QUERY: Estilos para pantallas más grandes (TABLET & DESKTOP) */
+  @media (min-width: 768px) {
+    .shop-main-container {
+      padding-top: 180px; /* Mayor espacio para evitar superposición */
+    }
+  
+    .shop-color-buttons {
+      top: 80px;
+      gap: 14px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+  }
+  
+  @media (min-width: 1024px) {
+    .shop-main-container {
+      padding-top: 180px;
+    }
+  
+    .shop-color-buttons {
+      top: 90px;
+      gap: 48px;
+    }
+
+  }
+  
